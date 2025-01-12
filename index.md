@@ -1,123 +1,99 @@
 ---
-layout: default
+title: Home
+layout: home
+nav_order: 1
+description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+permalink: /
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Focus on writing good documentation
+{: .fs-9 }
 
-[Link to another page](./another-page.html).
+Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+{: .fs-6 .fw-300 }
 
-There should be whitespace between paragraphs.
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub][Just the Docs repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+---
 
-# Header 1
+{: .warning }
+> This website documents the features of the current `main` branch of the Just the Docs theme. See [the CHANGELOG]({% link CHANGELOG.md %}) for a list of releases, new features, and bug fixes.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+Just the Docs is a theme for generating static websites with [Jekyll]. You can write source files for your web pages using [Markdown], the [Liquid] templating language, and HTML.[^1] Jekyll builds your site by converting all files that have [front matter] to HTML. Your [Jekyll configuration] file determines which theme to use, and sets general parameters for your site, such as the URL of its home page.
 
-## Header 2
+Jekyll builds this Just the Docs theme docs website using the theme itself. These web pages show how your web pages will look *by default* when you use this theme. But you can easily *[customize]* the theme to make them look completely different!
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+Browse the docs to learn more about how to use this theme.
 
-### Header 3
+## Getting started
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+The [Just the Docs Template] provides the simplest, quickest, and easiest way to create a new website that uses the Just the Docs theme. To get started with creating a site, just click "[use the template]"!
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+{: .note }
+To use the theme, you do ***not*** need to clone or fork the [Just the Docs repo]! You should do that only if you intend to browse the theme docs locally, contribute to the development of the theme, or develop a new theme based on Just the Docs.
 
-#### Header 4
+You can easily set the site created by the template to be published on [GitHub Pages] – the [template README] file explains how to do that, along with other details.
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^2] And you will be able to deploy your local build to a different platform than GitHub Pages.
 
-##### Header 5
+More specifically, the created site:
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
+- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
 
-###### Header 6
+Other than that, you're free to customize sites that you create with the template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+{: .note }
+See the theme [README][Just the Docs README] for how to use the theme as a gem without creating a new site.
 
-### There's a horizontal rule below this.
+## About the project
 
-* * *
+Just the Docs is &copy; 2017-{{ "now" | date: "%Y" }} by [Patrick Marsceill](https://patrickmarsceill.com).
 
-### Here is an unordered list:
+### License
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+Just the Docs is distributed by an [MIT license](https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt).
 
-### And an ordered list:
+### Contributing
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+When contributing to this repository, please first discuss the change you wish to make via issue,
+email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/just-the-docs/just-the-docs#contributing).
 
-### And a nested list:
+#### Thank you to the contributors of Just the Docs!
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+<ul class="list-style-none">
+{% for contributor in site.github.contributors %}
+  <li class="d-inline-block mr-1">
+     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"></a>
+  </li>
+{% endfor %}
+</ul>
 
-### Small image
+### Code of Conduct
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+Just the Docs is committed to fostering a welcoming community.
 
-### Large image
+[View our Code of Conduct](https://github.com/just-the-docs/just-the-docs/tree/main/CODE_OF_CONDUCT.md) on our GitHub repository.
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+----
 
+[^1]: The [source file for this page] uses all three markup languages.
 
-### Definition lists can be used with HTML syntax.
+[^2]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+[Jekyll]: https://jekyllrb.com
+[Markdown]: https://daringfireball.net/projects/markdown/
+[Liquid]: https://github.com/Shopify/liquid/wiki
+[Front matter]: https://jekyllrb.com/docs/front-matter/
+[Jekyll configuration]: https://jekyllrb.com/docs/configuration/
+[source file for this page]: https://github.com/just-the-docs/just-the-docs/blob/main/index.md
+[Just the Docs Template]: https://just-the-docs.github.io/just-the-docs-template/
+[Just the Docs]: https://just-the-docs.com
+[Just the Docs repo]: https://github.com/just-the-docs/just-the-docs
+[Just the Docs README]: https://github.com/just-the-docs/just-the-docs/blob/main/README.md
+[GitHub Pages]: https://pages.github.com/
+[Template README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
+[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+[customize]: {% link docs/customization.md %}
+[use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
