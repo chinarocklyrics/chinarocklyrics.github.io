@@ -1,0 +1,45 @@
+---
+layout: base
+---
+
+  <!-- <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {% if page.location %}
+        <span class="p-location">{{ page.location }}</span>
+      {% endif %}
+      {%- if page.author -%}
+        • {% for author in page.author %}
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+            {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+      {%- endif -%}
+    </p>
+  </header> -->
+  <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  {% assign diplomatic_activities = site.data.diplomatic_activities | sort_by: 'date' | reverse %}
+  <table>
+    {% for row in diplomatic_activities %}
+      {% if forloop.first %}
+        <tr>
+          {% for pair in row %}
+            <th>{{ pair[0] }}</th>
+          {% endfor %}
+        </tr>
+      {% endif %}
+      <tr>
+        {% for pair in row %}
+          <td>{{ pair[1] }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</article>

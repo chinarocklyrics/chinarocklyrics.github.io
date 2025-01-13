@@ -1,0 +1,48 @@
+---
+layout: post
+title: "Xi diplomatic activities analysis in 2024 May"
+date: 2024-06-30
+category: analysis
+---
+
+In May of 2024, Xi Jinping had 27 diplomatic activities.
+
+These diplomatic activities involved 23 countries and organizations: 
+8th China-Russia Expo, China-GCC Forum, Chinese language education project in the United Arab Emirates, 15th Islamic Cooperation summit in Banjul capital of The Gambia, Panama, 33rd Arab League Summit, Iran, North Macedonia, Chad, Vietnam, 14th China-US Tourism Summit, Dominican Republic, Malaysia, France, Serbia, Hungary, Russia, Equatorial Guinea, Egypt, China-Arab States Cooperation Forum, UAE, Tunisia, Bahrain
+
+Xi Jinping's diplomatic activities in May of 2024 includes 10 messages 7 visits abroad 7 visits in Beijing 3 letters .
+
+You sent 10 messages:
+1 On 2024 May 04, To 15th Islamic Cooperation summit in Banjul capital of The Gambia Organization of Islamic Cooperation (OIC) for congratulations 
+2 On 2024 May 11, To Panama President Mulino for congratulation on election 
+3 On 2024 May 16, To 33rd Arab League Summit King of Bahrain Hamad for congratulation on the opening 
+4 On 2024 May 20, To Iran Vice President Mokhber for condolences over the death of president in a helicopter accident 
+5 On 2024 May 21, To North Macedonia President Siljanovska-Davkova for congratulation on assuming president office 
+6 On 2024 May 21, To Chad President Itno for congratulations on the election 
+7 On 2024 May 22, To Vietnam President Lam for congratulations on assuming office 
+8 On 2024 May 22, To 14th China-US Tourism Summit 14th China-US Tourism Summit for congratulations on opening 
+9 On 2024 May 22, To Dominican Republic President Abinader for congratulations on the re-election 
+10 On 2024 May 31, To Malaysia King Iskandar for 50th anniversary of diplomatic ties 
+
+You visited 3 countries:
+1 On 2024 May 05, To France President Macron for state visit 
+2 On 2024 May 06, To France President Macron for state visit 
+3 On 2024 May 07, To France President Macron for restaurant in South France 
+4 On 2024 May 07, To Serbia President Vucic for state visit 
+5 On 2024 May 08, To Serbia President Vucic for state visit 
+6 On 2024 May 09, To Hungary President Sulyok for state visite 
+7 On 2024 May 10, To Hungary Prime Minister Orban for state visite 
+
+You met 7 guests in Beijing:
+1 On 2024 May 16, To Russia President Putin for state visit 
+2 On 2024 May 28, To Equatorial Guinea President Mbasogo for state visit 
+3 On 2024 May 29, To Egypt President El-Sisi for state visit 
+4 On 2024 May 30, To China-Arab States Cooperation Forum China-Arab States Cooperation Forum for 10th China-Arab States Cooperation Forum 
+5 On 2024 May 30, To UAE President Nahyan for state visit 
+6 On 2024 May 31, To Tunisia President Saied for state visit 
+7 On 2024 May 31, To Bahrain King Khalifa for state visit 
+
+You replied 3 letters:
+1 On 2024 May 17, To 8th China-Russia Expo 8th China-Russia Expo for congratulations on the opening 
+2 On 2024 May 23, To China-GCC Forum China-GCC Forum for congratulation letter 
+3 On 2024 May 26, To Chinese language education project in the United Arab Emirates student representatives of the Hundred Schools Project for reply a letter 

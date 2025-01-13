@@ -1,0 +1,16 @@
+---
+---
+[
+  {% for post in site.posts %}
+    {
+
+      "title"    : "{{ post.title | escape }}",
+      "url"      : "{{ post.url | absolute_url }}",
+      "category" : "{{ post.category }}",
+      "date"     : "{{ post.date }}",
+      "cipaiming": "{{ post.cipaiming }}",
+      "zuozhe"   : "{{ post.zuozhe }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
