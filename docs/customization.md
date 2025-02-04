@@ -326,12 +326,6 @@ Each of these components can be overridden individually using the same process d
 
 Future versions may subdivide components further; we guarantee that we will only place them in folders (ex `components/`, `icons/`, or a new `js/`) to avoid top-level namespace collisions.
 
-### Alternative layouts and example (`minimal`)
-
-Users can develop custom layouts that compose, omit, or add components differently. We provide one first-class example titled `minimal`, which disables the navigation sidebar. To see an example, visit the [minimal layout test]({{site.baseurl}}/docs/minimal-test/) page.
-
-Users can indicate this alternative layout in page front matter:
-
 {% raw %}
 
 ```
