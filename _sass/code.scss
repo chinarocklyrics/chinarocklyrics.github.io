@@ -219,13 +219,6 @@ figure.highlight {
   }
 }
 
-// Mermaid diagram code blocks should be left unstyled.
-code.language-mermaid {
-  padding: 0;
-  background-color: inherit;
-  border: 0;
-}
-
 // Override OneDarkJekyll Colors for Code Blocks
 .highlight,
 pre.highlight {
