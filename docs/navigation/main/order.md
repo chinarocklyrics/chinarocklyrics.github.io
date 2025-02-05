@@ -11,13 +11,6 @@ To specify a page order, you can use the `nav_order` parameter in the front matt
 ## Example: using `nav_order`
 {: .text-delta }
 
-```yaml
----
-title: Customization
-nav_order: 6
----
-```
-
 The parameter values determine the order of the top-level pages, and of child pages with the same parent. You can reuse the same parameter values (e.g., integers starting from 1) for the child pages of different parents.
 
 The parameter values can be numbers (integers, floats[^floats]) and/or strings. When you omit `nav_order` parameters, they default to the titles of the pages, which are ordered alphabetically. Pages with numerical `nav_order` parameters always come before those with strings or default `nav_order` parameters. If you want to make the page order independent of the page titles, you can set explicit `nav_order` parameters on all pages.
