@@ -9,44 +9,16 @@ permalink: /
 # Welcome to China Rock Lyrics! 🎸 – Your Gateway to China’s Rock Revolution
 {: .fs-9 }
 
-Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+ChinaRockLyrics.github.io is your ultimate destination for exploring the lyrics of China's rock music scene. Whether you're a longtime fan or just discovering the rich and rebellious world of Chinese rock (中国摇滚), this collection brings together the words that have shaped generations of music lovers.
 {: .fs-6 .fw-300 }
 
 ---
 
-Just the Docs is a theme for generating static websites with [Jekyll]. You can write source files for your web pages using [Markdown], the [Liquid] templating language, and HTML. Jekyll builds your site by converting all files that have [front matter] to HTML. Your [Jekyll configuration] file determines which theme to use, and sets general parameters for your site, such as the URL of its home page.
+Immerse yourself in the powerful world of Chinese rock music with ChinaRockLyrics.github.io, where passion, poetry, and raw energy collide. Discover the unique blend of traditional Chinese elements and modern rock influences that have given rise to a diverse and vibrant music scene. Our website is dedicated to bringing you the most comprehensive collection of lyrics from your favorite Chinese rock bands and artists. From the pioneers who ignited the movement to the contemporary voices shaping its future, we offer a window into the soul of China's rock culture. Explore the stories, emotions, and cultural nuances embedded in every lyric, and connect with a community that shares your love for this electrifying genre. Welcome to China Rock Lyrics – where the heart of Chinese rock beats loud and clear.
 
-Jekyll builds this Just the Docs theme docs website using the theme itself. These web pages show how your web pages will look *by default* when you use this theme. But you can easily *[customize]* the theme to make them look completely different!
+From the legendary pioneers like Cui Jian (崔健) to modern rock icons, our goal is to preserve, share, and celebrate the lyrics that define China's rock movement. Whether you're looking for meaning, translation, or simply enjoying the poetry behind the music, you'll find it here.
 
-Browse the docs to learn more about how to use this theme.
+Dive into the raw energy, the powerful storytelling, and the rebellious spirit of China’s rock history—one lyric at a time. 🤘🔥
 
-## Getting started
+🚀 Start exploring now!
 
-The [Just the Docs Template] provides the simplest, quickest, and easiest way to create a new website that uses the Just the Docs theme. To get started with creating a site, just click "[use the template]"!
-
-You can easily set the site created by the template to be published on [GitHub Pages] – the [template README] file explains how to do that, along with other details.
-
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages. And you will be able to deploy your local build to a different platform than GitHub Pages.
-
-More specifically, the created site:
-
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
-
-Other than that, you're free to customize sites that you create with the template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-----
-
-[Jekyll]: https://jekyllrb.com
-[Markdown]: https://daringfireball.net/projects/markdown/
-[Liquid]: https://github.com/Shopify/liquid/wiki
-[Front matter]: https://jekyllrb.com/docs/front-matter/
-[source file for this page]: https://github.com/just-the-docs/just-the-docs/blob/main/index.md
-[Just the Docs Template]: https://just-the-docs.github.io/just-the-docs-template/
-[Just the Docs]: https://just-the-docs.com
-[Just the Docs repo]: https://github.com/just-the-docs/just-the-docs
-[Just the Docs README]: https://github.com/just-the-docs/just-the-docs/blob/main/README.md
-[GitHub Pages]: https://pages.github.com/
-[Template README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
