@@ -1,6 +1,6 @@
 ---
 title: Singer or Band Name
-nav_order: 5
+nav_order: 2
 ---
 
 # Navigation
