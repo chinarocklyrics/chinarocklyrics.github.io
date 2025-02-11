@@ -1,6 +1,6 @@
 ---
 title: Ancestry
-parent: Main Navigation
+parent: Singer or Band Name Starts with C
 nav_order: 4
 ---
 
