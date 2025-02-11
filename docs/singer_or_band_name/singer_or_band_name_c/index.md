@@ -5,5 +5,3 @@ nav_order: 1
 ---
 
 # Singer or Band Name Starts with C
-
----
