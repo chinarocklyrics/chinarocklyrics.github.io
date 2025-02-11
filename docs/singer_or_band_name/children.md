@@ -1,6 +1,6 @@
 ---
 title: Child Pages
-parent: Navigation
+parent: Singer or Band Name 
 nav_order: 4
 ---
 
