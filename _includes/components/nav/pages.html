@@ -65,6 +65,12 @@
   {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
 </pre>
 
+{% assign nav_parenthood = nav_parenthood | map: "json" %}
+
+<pre>
+  {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
+</pre>
+
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
 
