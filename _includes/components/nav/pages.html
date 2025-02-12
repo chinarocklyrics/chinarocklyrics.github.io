@@ -34,20 +34,31 @@
         {% assign nav_parenthood = nav_parenthood | push: new_entry %}
       {% endif %}
     {% endfor %}
+  {% else %}
+    {% assign parent_value = "" %}
+    {% assign existing_group = nav_parenthood | where: "name", parent_value | first %}
+
+    {% if existing_group %}
+      <!-- Extract existing pages and add the new page -->
+      {% assign updated_items = existing_group.items | push: page %}
+      
+      <!-- Remove old group entry -->
+      {% assign nav_parenthood = nav_parenthood | where_exp: "item", "item.name != parent_value" %}
+
+      <!-- Add updated group -->
+      {% assign nav_parenthood = nav_parenthood | push: 
+        '{"name":"' | append: parent_value | append: '", "items":' | append: updated_items | append: '}' 
+      %}
+    {% else %}
+      <!-- Create a new group for this parent -->
+      {% assign new_entry = '{"name":"' | append: parent_value | append: '", "items":[' | append: page | append: ']}' %}
+      {% assign nav_parenthood = nav_parenthood | push: new_entry %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 
-<pre>
-  {{ nav_parenthood | inspect }}
-</pre>
-
-
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
-
-      <pre>
-        {{ nav_top_nodes | inspect }}
-      </pre>
 
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
 

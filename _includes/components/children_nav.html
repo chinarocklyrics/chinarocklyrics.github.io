@@ -59,9 +59,6 @@
     {%- assign nav_ancestors = nav_ancestors | push: nav_title -%}
   {%- endfor -%}
 
-  <!-- {%- assign nav_parenthood = site[page.collection] | default: site.html_pages
-    | where_exp: "item", "item.title != nil" | group_by: "parent" -%} -->
-
     {% assign nav_parenthood = "" | split: "," %} <!-- Initialize an empty array -->
 
     {% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}

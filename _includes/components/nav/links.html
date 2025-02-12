@@ -8,10 +8,6 @@
     node, nav_children, nav_ancestors.
 {%- endcomment -%}
 
-<pre>
-  {{ nav_parenthood | inspect}}
-</pre>
-
 <ul class="nav-list">
   {%- for node in include.pages -%}
     {%- if include.all == true or node.nav_exclude != true -%}

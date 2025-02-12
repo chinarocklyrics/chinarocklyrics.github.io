@@ -10,18 +10,9 @@
 {%- assign nav_children = "" | split: "" -%}
 
 {%- if include.all == true or include.node.has_children != false -%}
-   <pre>
-    {{ nav_parenthood | inspect }}
-   </pre>
-   <pre>
-    {{ include.node.title | inspect}}
-   </pre>
 
   {%- assign nav_candidates = nav_parenthood
         | where: "name", include.node.title | map: "items" | first -%}
-    <pre>
-      {{ nav_candidates | inspect}}
-    </pre>
 
   {%- for nav_child in nav_candidates -%}
     {%- assign nav_child_ok = true -%}
