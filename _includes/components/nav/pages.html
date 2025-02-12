@@ -65,6 +65,9 @@
   {{ nav_parenthood | where_exp: "item", "item.name == 'root'" | inspect}}
 </pre>
 
+{% for item in nav_parenthood %}
+  <p>Name: "{{ item.name }}"</p>
+{% endfor %}
 
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == 'root'" | map: "items" | first -%}
