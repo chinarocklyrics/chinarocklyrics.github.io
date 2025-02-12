@@ -8,6 +8,7 @@
     nav_parenthood, nav_top_nodes, nav_top_node_titles, nav_ancestors.
 {%- endcomment -%}
 
+{%- comment -%}
 {% assign nav_parenthood = "" | split: "," %} <!-- Initialize an empty array -->
 {% assign new_hash = '{"name": "root", "items": []}' %}
 {% assign nav_parenthood = nav_parenthood | push: new_hash %}
@@ -58,22 +59,57 @@
     {% endif %}
   {% endif %}
 {% endfor %}
+{%- endcomment -%}
+
+{% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
+{% assign nav_parenthood = {} %}
+
+{% for page in passed_in_pages %}
+  {% if page.parent %}
+    {% if page.parent.size > 1 %}
+      {% assign parent_list = page.parent %}
+      {% for parent in parent_list %}
+        {% capture parent_key %}{{ parent }}{% endcapture %}
+        {% if nav_parenthood[parent_key] %}
+          {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
+        {% else %}
+          {% assign nav_parenthood[parent_key] = page %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% assign parent_key = page.parent %}
+      {% if nav_parenthood[parent_key] %}
+        {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
+      {% else %}
+        {% assign nav_parenthood[parent_key] = page %}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% capture parent_key %}{% endcapture %}
+    {% if nav_parenthood[parent_key] %}
+      {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
+    {% else %}
+      {% assign nav_parenthood[parent_key] = page %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %}
+  Now `grouped_pages` contains the pages grouped by parent value,
+  even when some pages have multiple parents or an empty parent value.
+{% endcomment %}
+
 
 <pre>
-  {{nav_parenthood | inspect}}
-</pre>
-
-<pre>
-  {{ nav_parenthood | where_exp: "item", "item.name == 'root'" | inspect}}
+  {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
 </pre>
 
 {% for item in nav_parenthood %}
-  {% assign parsed_item = item | parse_json %}
-  <p>Name: "{{ parsed_item.name }}"</p>
+   <p>Name: "{{ item.name }}"</p>
 {% endfor %}
 
 {%- assign nav_top_nodes = nav_parenthood
-      | where_exp: "item", "item.name == 'root'" | map: "items" | first -%}
+      | where_exp: "item", "item.name == ''" | map: "items" | first -%}
 
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
 
