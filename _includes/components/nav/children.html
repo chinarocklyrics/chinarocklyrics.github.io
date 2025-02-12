@@ -13,6 +13,10 @@
 
   {%- assign nav_candidates = nav_parenthood
         | where: "name", include.node.title | map: "items" | first -%}
+  
+        {% for page_debug in nav_candidates %}
+        <p>{{ page_debug.title }}</p>
+      {% endfor %}
 
   {%- for nav_child in nav_candidates -%}
     {%- assign nav_child_ok = true -%}
