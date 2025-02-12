@@ -1,6 +1,6 @@
 ---
 title: 一无所有
-parent: 崔健
+parent: ['崔健','Song Name Starts with Y']
 ---
 
 # 一无所有
