@@ -68,7 +68,8 @@
 </pre>
 
 {% for item in nav_parenthood %}
-  <p>Name: "{{ item.name }}"</p>
+  {% assign parsed_item = item | parse_json %}
+  <p>Name: "{{ parsed_item.name }}"</p>
 {% endfor %}
 
 {%- assign nav_top_nodes = nav_parenthood
