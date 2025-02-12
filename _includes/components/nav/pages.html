@@ -48,6 +48,14 @@
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
 
+      <pre>
+        {{ nav_parenthood           | where_exp: "item", "item.name == ''" | inspect }}
+      </pre>
+
+      <pre>
+        {{ nav_top_nodes }}
+      </pre>
+
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
 
 {% assign nav_top_node_titles = nav_top_nodes | map: "title" -%}
