@@ -9,6 +9,8 @@
 {%- endcomment -%}
 
 {% assign nav_parenthood = "" | split: "," %} <!-- Initialize an empty array -->
+{% assign new_hash = '{"name": "root", "items": []}' %}
+{% assign nav_parenthood = nav_parenthood | push: new_hash %}
 
 {% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
 
