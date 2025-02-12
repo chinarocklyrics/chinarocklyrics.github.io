@@ -8,8 +8,38 @@
     nav_parenthood, nav_top_nodes, nav_top_node_titles, nav_ancestors.
 {%- endcomment -%}
 
-{%- assign nav_parenthood = include.pages
-      | where_exp: "item", "item.title != nil" | group_by: "parent" -%}     
+{% assign nav_parenthood = "" | split: "," %} <!-- Initialize an empty array -->
+
+{% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
+
+{% for page in passed_in_pages %}
+  {% if page.parent %}
+    {% for parent_value in page.parent %}
+      {% assign existing_group = nav_parenthood | where: "name", parent_value | first %}
+
+      {% if existing_group %}
+        <!-- Extract existing pages and add the new page -->
+        {% assign updated_items = existing_group.items | push: page %}
+        
+        <!-- Remove old group entry -->
+        {% assign nav_parenthood = nav_parenthood | where_exp: "item", "item.name != parent_value" %}
+
+        <!-- Add updated group -->
+        {% assign nav_parenthood = nav_parenthood | push: 
+          '{"name":"' | append: parent_value | append: '", "items":' | append: updated_items | append: '}' 
+        %}
+      {% else %}
+        <!-- Create a new group for this parent -->
+        {% assign new_entry = '{"name":"' | append: parent_value | append: '", "items":[' | append: page | append: ']}' %}
+        {% assign nav_parenthood = nav_parenthood | push: new_entry %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+
+<!-- {%- assign nav_parenthood = include.pages
+      | where_exp: "item", "item.title != nil" | group_by: "parent" -%}      -->
 
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
