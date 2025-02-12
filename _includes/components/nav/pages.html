@@ -35,7 +35,7 @@
       {% endif %}
     {% endfor %}
   {% else %}
-    {% assign parent_value = "" %}
+    {% assign parent_value = "root" %}
     {% assign existing_group = nav_parenthood | where: "name", parent_value | first %}
 
     {% if existing_group %}
@@ -62,17 +62,12 @@
 </pre>
 
 <pre>
-  {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
+  {{ nav_parenthood | where_exp: "item", "item.name == 'root'" | inspect}}
 </pre>
 
-{% assign nav_parenthood = nav_parenthood | map: "json" %}
-
-<pre>
-  {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
-</pre>
 
 {%- assign nav_top_nodes = nav_parenthood
-      | where_exp: "item", "item.name == ''" | map: "items" | first -%}
+      | where_exp: "item", "item.name == 'root'" | map: "items" | first -%}
 
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
 
