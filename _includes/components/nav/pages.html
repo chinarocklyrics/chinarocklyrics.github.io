@@ -41,20 +41,11 @@
   {{ nav_parenthood | inspect }}
 </pre>
 
-
 <!-- {%- assign nav_parenthood = include.pages
       | where_exp: "item", "item.title != nil" | group_by: "parent" -%}      -->
 
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
-
-      <pre>
-        {{ nav_parenthood           | where_exp: "item", "item.name == ''" | inspect }}
-      </pre>
-
-      <pre>
-        {{ nav_top_nodes | inspect }}
-      </pre>
 
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
 
