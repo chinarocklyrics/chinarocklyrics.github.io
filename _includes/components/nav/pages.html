@@ -8,7 +8,7 @@
     nav_parenthood, nav_top_nodes, nav_top_node_titles, nav_ancestors.
 {%- endcomment -%}
 
-{% assign nav_parenthood = "" | split: "," %}
+{% assign nav_parenthood = "" | split: "," %} <!-- Initialize as an empty array -->
 
 {% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
 
@@ -18,17 +18,19 @@
       {% assign existing_group = nav_parenthood | where: "name", parent_value | first %}
 
       {% if existing_group %}
+        <!-- Extract existing pages and add the new page -->
         {% assign updated_items = existing_group.items | push: page %}
         {% assign nav_parenthood = nav_parenthood | where_exp: "item", "item.name != parent_value" %}
-        {% assign new_group = nav_parenthood | push: {"name": parent_value, "items": updated_items} %}
+        {% assign nav_parenthood = nav_parenthood | push: updated_items %}
       {% else %}
-        {% assign new_group = nav_parenthood | push: {"name": parent_value, "items": page | split: ","} %}
+        <!-- Create a new group for this parent -->
+        {% assign new_group = nav_parenthood | push: 
+          site.data.empty_hash | merge: 
+          '{"name": parent_value, "items": page | split: ","}' %}
+        {% assign nav_parenthood = new_group %}
       {% endif %}
-
-      {% assign nav_parenthood = new_group %}
     {% endfor %}
   {% endif %}
-{% endfor %}
 
 <!-- {%- assign nav_parenthood = include.pages
       | where_exp: "item", "item.title != nil" | group_by: "parent" -%}      -->
