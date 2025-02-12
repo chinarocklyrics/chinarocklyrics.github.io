@@ -37,6 +37,10 @@
   {% endif %}
 {% endfor %}
 
+<pre>
+  {{ nav_parenthood | inspect }}
+</pre>
+
 
 <!-- {%- assign nav_parenthood = include.pages
       | where_exp: "item", "item.title != nil" | group_by: "parent" -%}      -->
