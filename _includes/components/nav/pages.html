@@ -57,6 +57,10 @@
   {% endif %}
 {% endfor %}
 
+<pre>
+  {{nav_parenthood | inspect}}
+</pre>
+
 {%- assign nav_top_nodes = nav_parenthood
       | where_exp: "item", "item.name == ''" | map: "items" | first -%}
 
