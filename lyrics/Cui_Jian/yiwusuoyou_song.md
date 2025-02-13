@@ -1,6 +1,6 @@
 ---
 title: 一无所有
-parent: 崔健
+parent: Song Name Starts with Y
 nav_order: 1
 ---
 
