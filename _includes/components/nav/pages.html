@@ -88,6 +88,7 @@
   {% endif %}
 {% endfor %}
 
+{% assign parent_groups = {} %}
 <!-- Parse the grouped_pages string into the actual hash structure -->
 {%- assign nav_parenthood = include.pages
   | where_exp: "item", "item.title != nil" | group_by: "parent" -%}
