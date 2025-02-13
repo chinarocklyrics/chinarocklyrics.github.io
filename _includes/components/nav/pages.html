@@ -89,7 +89,7 @@
 {% endfor %}
 
 <!-- Parse the grouped_pages string into the actual hash structure -->
-{% assign nav_parenthood = "" %}
+{% assign nav_parenthood = ""  | split: "|"  %}
 {% for item in grouped_pages | split: "," %}
   {% assign parts = item | split: ":" %}
   {% assign parent = parts[0] %}
