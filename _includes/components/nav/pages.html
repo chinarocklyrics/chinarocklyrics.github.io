@@ -89,9 +89,8 @@
 {% endfor %}
 
 <!-- Parse the grouped_pages string into the actual hash structure -->
-{% assign nav_parenthood = ""  | split: "|"  %}
-
-
+{%- assign nav_parenthood = include.pages
+  | where_exp: "item", "item.title != nil" | group_by: "parent" -%}
 
 {% comment %}
   Now `grouped_pages` contains the pages grouped by parent value,
@@ -101,6 +100,10 @@
 
 <pre>
   {{ grouped_pages | inspect}}
+</pre>
+
+<pre>
+  {{ nav_parenthood | inspect}}
 </pre>
 
 {% for item in nav_parenthood %}
