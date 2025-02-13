@@ -90,7 +90,9 @@
 
 <!-- Parse the grouped_pages string into the actual hash structure -->
 {% assign nav_parenthood = ""  | split: "|"  %}
-{% for item in grouped_pages | split: "," %}
+
+{% assign items = grouped_pages | split: "," %}
+{% for item in items %}
   {% assign parts = item | split: ":" %}
   {% assign parent = parts[0] %}
   {% assign page_info = parts[1] | split: "|" %}
