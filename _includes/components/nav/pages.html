@@ -88,7 +88,14 @@
   {% endif %}
 {% endfor %}
 
-{% assign parent_groups = {} %}
+{% assign simple_hash = "" | split: "" %}
+
+{% assign simple_hash = simple_hash | push: { "key1": "value1" } %}
+{% assign simple_hash = simple_hash | push: { "key2": "value2" } %}
+{% assign simple_hash = simple_hash | push: { "key3": "value3" } %}
+
+<!-- Output the hash for debugging purposes -->
+<pre>{{ simple_hash | inspect }}</pre>
 <!-- Parse the grouped_pages string into the actual hash structure -->
 {%- assign nav_parenthood = include.pages
   | where_exp: "item", "item.title != nil" | group_by: "parent" -%}
