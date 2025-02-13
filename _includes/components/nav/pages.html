@@ -61,8 +61,11 @@
 {% endfor %}
 {%- endcomment -%}
 
+
+{% comment %}
 {% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
 {% assign nav_parenthood = {} %}
+
 
 {% for page in passed_in_pages %}
   {% if page.parent %}
@@ -93,6 +96,50 @@
     {% endif %}
   {% endif %}
 {% endfor %}
+{% endcomment %}
+
+{% assign all_pages = include.pages | where_exp: "item", "item.title != nil" %}
+{% assign grouped_pages = "" %} <!-- Capture empty string initially -->
+
+{% for page in all_pages %}
+  {% if page.parent %}
+    {% if page.parent.size > 1 %}
+      {% assign parent_list = page.parent %}
+      {% for parent in parent_list %}
+        {% capture parent_key %}{{ parent }}{% endcapture %}
+        {% assign grouped_pages = grouped_pages | append: parent_key | append: ":" %}
+        {% capture page_item %}{{ page.url }}|{{ page.title }}{% endcapture %}
+        {% assign grouped_pages = grouped_pages | append: page_item | append: "," %}
+      {% endfor %}
+    {% else %}
+      {% capture parent_key %}{{ page.parent }}{% endcapture %}
+      {% assign grouped_pages = grouped_pages | append: parent_key | append: ":" %}
+      {% capture page_item %}{{ page.url }}|{{ page.title }}{% endcapture %}
+      {% assign grouped_pages = grouped_pages | append: page_item | append: "," %}
+    {% endif %}
+  {% else %}
+    {% capture parent_key %}{% endcapture %}
+    {% assign grouped_pages = grouped_pages | append: parent_key | append: ":" %}
+    {% capture page_item %}{{ page.url }}|{{ page.title }}{% endcapture %}
+    {% assign grouped_pages = grouped_pages | append: page_item | append: "," %}
+  {% endif %}
+{% endfor %}
+
+<!-- Parse the grouped_pages string into the actual hash structure -->
+{% assign nav_parenthood = "" %}
+{% for item in grouped_pages | split: "," %}
+  {% assign parts = item | split: ":" %}
+  {% assign parent = parts[0] %}
+  {% assign page_info = parts[1] | split: "|" %}
+  {% assign page_url = page_info[0] %}
+  {% assign page_title = page_info[1] %}
+
+  {% if nav_parenthood[parent] %}
+    {% assign nav_parenthood[parent] = nav_parenthood[parent] | push: { "url": page_url, "title": page_title } %}
+  {% else %}
+    {% assign nav_parenthood[parent] = [{ "url": page_url, "title": page_title }] %}
+  {% endif %}
+{% endfor %}
 
 {% comment %}
   Now `grouped_pages` contains the pages grouped by parent value,
@@ -101,11 +148,11 @@
 
 
 <pre>
-  {{ nav_parenthood | where_exp: "item", "item.name == ''" | inspect}}
+  {{ nav_parenthood | inspect}}
 </pre>
 
 {% for item in nav_parenthood %}
-   <p>Name: "{{ item.name }}"</p>
+   {{ item.name | inspect }}
 {% endfor %}
 
 {%- assign nav_top_nodes = nav_parenthood
