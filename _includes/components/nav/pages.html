@@ -61,43 +61,6 @@
 {% endfor %}
 {%- endcomment -%}
 
-
-{% comment %}
-{% assign passed_in_pages = include.pages | where_exp: "item", "item.title != nil" %}
-{% assign nav_parenthood = {} %}
-
-
-{% for page in passed_in_pages %}
-  {% if page.parent %}
-    {% if page.parent.size > 1 %}
-      {% assign parent_list = page.parent %}
-      {% for parent in parent_list %}
-        {% capture parent_key %}{{ parent }}{% endcapture %}
-        {% if nav_parenthood[parent_key] %}
-          {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
-        {% else %}
-          {% assign nav_parenthood[parent_key] = page %}
-        {% endif %}
-      {% endfor %}
-    {% else %}
-      {% assign parent_key = page.parent %}
-      {% if nav_parenthood[parent_key] %}
-        {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
-      {% else %}
-        {% assign nav_parenthood[parent_key] = page %}
-      {% endif %}
-    {% endif %}
-  {% else %}
-    {% capture parent_key %}{% endcapture %}
-    {% if nav_parenthood[parent_key] %}
-      {% assign nav_parenthood[parent_key] = nav_parenthood[parent_key] | append: page %}
-    {% else %}
-      {% assign nav_parenthood[parent_key] = page %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endcomment %}
-
 {% assign all_pages = include.pages | where_exp: "item", "item.title != nil" %}
 {% assign grouped_pages = "" %} <!-- Capture empty string initially -->
 
