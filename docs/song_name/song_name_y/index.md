@@ -1,7 +1,7 @@
 ---
 title: Song Name Starts with Y
 parent: Song Name 
-nav_order: 1
+nav_order: 25
 ---
 
 # Song Name Starts with Y

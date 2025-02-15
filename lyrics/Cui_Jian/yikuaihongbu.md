@@ -1,7 +1,7 @@
 ---
 title: 一块红布
 parent: 崔健
-nav_order: 2
+nav_order: 40
 ---
 
 # 一块红布

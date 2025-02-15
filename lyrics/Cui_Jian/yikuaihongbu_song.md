@@ -1,7 +1,7 @@
 ---
 title: 一块红布
 parent: Song Name Starts with Y
-nav_order: 2
+nav_order: 40
 ---
 
 # 一块红布
